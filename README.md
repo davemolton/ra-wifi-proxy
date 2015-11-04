@@ -1,10 +1,11 @@
-#ReefAngel Wifi Proxy
+# ReefAngel Wifi Proxy
+
 The ReefAngel Wifi Proxy is a Node.js module for connecting to a ReefAngel wifi enabled controller and executing 
 queries and commands against it. 
  
 *Note:* The results of these commands are the raw response values outputted from the controller.
 
-##Basic Usage
+## Basic Usage
     
 		var controllerSettings = {
 			hostname: '192.168.1.150',
@@ -21,7 +22,7 @@ queries and commands against it.
 			if(!err) console.log(JSON.parse(response));
 		});
 
-##API
+## API
 + clearAto(cb)
 + clearLeakDetector(cb)
 + clearOverheat(cb)

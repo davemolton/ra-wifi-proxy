@@ -1,4 +1,5 @@
 var http = require('http');
+var assert = require('assert');
 
 var portalRequestOpts = {
 	hostname:'forum.reefangel.com'
@@ -55,7 +56,10 @@ function requestFinished(callback, err, resp){
 }
 
 module.exports = function(controllerOptions){
-
+	assert.notStrictEqual(controllerOptions, undefined, 'controllerOptions required')
+	assert.ok(controllerOptions.hostname, 'controllerOptions.hostname is required');
+	controllerOptions.port = controllerOptions.port || 2000;	
+	
 	controllerRequestOpts = controllerOptions;
 	
 	return{
@@ -63,11 +67,8 @@ module.exports = function(controllerOptions){
 		maskRelay: function(options, cb){		
 			//options.box    : Number : The box to set (0-7)
 			//options.port   : Number : The port to set (1-8)
-			//options.status : Number : Relay status to set (0=off, 1=on, 2=Auto)
-			
-			if(typeof options.box !== 'number' || typeof options.port !== 'number' 
-				|| typeof options.status !== 'number') cb(new Error('Relay options defined are not well formatted'), null);
-			
+			//options.status : Number : Relay status to set (0=off, 1=on, 2=Auto)			
+			assert.notStrictEqual(options, undefined, 'options required');			
 			var mask = '/r' + options.box + options.port + options.status;
 			send(mask, cb);
 		},
@@ -151,8 +152,8 @@ module.exports = function(controllerOptions){
 		override: function(options, cb){
 			//options.channel : Number : The channel to set
 			//options.value   : Number : The new value to set on the channel
-			if(typeof options.channel !== 'number' 
-				|| typeof options.value !== 'number') cb(new Error('Override options not well formatted'), null);
+			assert.notStrictEqual(options, undefined, 'Options required');	
+			
 			var override = '/po' + options.channel + ',' + options.value;
 			send(override, cb, false);	 
 		}
