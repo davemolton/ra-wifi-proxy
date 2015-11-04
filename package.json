@@ -1,0 +1,21 @@
+{
+  "name": "ra-wifi-proxy",
+  "version": "1.0.0",
+  "description": "ReefAngel proxy module to query and make commands on the controller at the provided endpoint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davemolton/ra-wifi-proxy.git"
+  },
+  "keywords": [
+    "ReefAngel"
+  ],
+  "author": { 
+    "name" : "David Molton",
+    "email" : "dmolton@gmail.com"
+  },    
+  "license": "MIT"
+}
