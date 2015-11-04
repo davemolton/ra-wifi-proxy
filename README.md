@@ -1,6 +1,6 @@
 # ReefAngel Wifi Proxy
 
-[![Build Status](https://travis-ci.org/davemolton/ra-wifi-proxy.svg?branch=master)]([https://travis-ci.org/davemolton/ra-wifi-proxy])
+[![Build Status](https://travis-ci.org/davemolton/ra-wifi-proxy.svg?branch=master)](https://travis-ci.org/davemolton/ra-wifi-proxy)
 
 The ReefAngel Wifi Proxy is a Node.js module for connecting to a ReefAngel wifi enabled controller and executing 
 queries and commands against it. 
